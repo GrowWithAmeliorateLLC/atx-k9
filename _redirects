@@ -1,6 +1,6 @@
 # ATX K9 — legacy WordPress 301s (SEO preservation on domain cutover)
 # This file applies to the dedicated atxk9.com Netlify site
-# (publish dir = scope/demo/atx-k9). Targets are root-relative.
+# (repo GrowWithAmeliorateLLC/atx-k9, published from the repo root). Targets are root-relative.
 
 # Core pages
 /board-and-train-austin/*              /board-and-train.html             301!
@@ -8,6 +8,7 @@
 /reviews/*                             /#reviews                         301!
 /about/*                               /about.html                       301!
 /faq/*                                 /private.html#faq                  301!
+/contact/*                             /contact.html                     301!
 /austin-dog-training-blog/*            /                                 301!
 
 # Location landing pages (old -tx slugs -> nearest new location page)
