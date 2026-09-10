@@ -1,0 +1,9 @@
+# ATX K9 Dog Training — atxk9.com
+# Static site. No build step; Netlify publishes the repo root.
+[build]
+  publish = "."
+
+# Keep Netlify "Pretty URLs" off so links like private.html resolve exactly
+# as they did when this site was served from the found-reports repo.
+[build.processing.html]
+  pretty_urls = false

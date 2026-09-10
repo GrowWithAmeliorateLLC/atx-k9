@@ -1,0 +1,41 @@
+# ATX K9 — legacy WordPress 301s (SEO preservation on domain cutover)
+# This file applies to the dedicated atxk9.com Netlify site
+# (publish dir = scope/demo/atx-k9). Targets are root-relative.
+
+# Core pages
+/board-and-train-austin/*              /board-and-train.html             301!
+/dog-obedience-training-austin-tx/*    /private.html                     301!
+/reviews/*                             /#reviews                         301!
+/about/*                               /about.html                       301!
+/faq/*                                 /private.html#faq                  301!
+/austin-dog-training-blog/*            /                                 301!
+
+# Location landing pages (old -tx slugs -> nearest new location page)
+/dog-training-round-rock-tx/*          /dog-training-round-rock.html      301!
+/dog-training-cedar-park-tx/*          /dog-training-cedar-park.html      301!
+/dog-training-west-lake-hills-tx/*     /dog-training-westlake.html        301!
+/dog-training-westlake-tx/*            /dog-training-westlake.html        301!
+/dog-training-south-austin-tx/*        /dog-training-south-austin.html    301!
+/dog-training-sunset-valley-tx/*       /dog-training-south-austin.html    301!
+/dog-training-san-marcos-tx/*          /dog-training-south-austin.html    301!
+/dog-training-kyle-tx/*                /dog-training-south-austin.html    301!
+/dog-training-pflugerville-tx/*        /dog-training-round-rock.html      301!
+/dog-training-dripping-springs-tx/*    /dog-training-westlake.html        301!
+
+# Catch-all for every OTHER legacy /dog-training-[city]-tx/ page -> home.
+# NON-forced (no "!") so the real new /dog-training-*.html pages still serve.
+/dog-training-*                        /                                 301
+
+# Blog posts
+/dog-owner-enters-the-world-of-training/*              /                 301!
+/pros-and-cons-of-potty-pods-and-other-tips/*          /puppy.html       301!
+/nervous-puppy/*                       /puppy.html                       301!
+/lessons-that-my-dogs-have-taught-me-about-training/*  /                 301!
+/crate-training-dont-fence-me-in-austindogtraining/*   /puppy.html       301!
+/training-and-exercise-for-your-dog/*  /board-and-train.html             301!
+/category/*                            /                                 301!
+/author/*                              /                                 301!
+
+# www -> apex (Netlify also handles this once the primary domain is set)
+https://www.atxk9.com/*                https://atxk9.com/:splat          301!
+https://atx-k9.netlify.app/*  https://atxk9.com/:splat  301!
