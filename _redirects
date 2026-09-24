@@ -13,17 +13,25 @@
 
 # Location landing pages (old -tx slugs -> nearest new location page)
 /dog-training-round-rock-tx/*          /dog-training-round-rock.html      301!
+/dog-training-georgetown-tx/*          /dog-training-round-rock.html      301!
+/dog-training-hutto-tx/*               /dog-training-round-rock.html      301!
+/dog-training-pflugerville-tx/*        /dog-training-round-rock.html      301!
 /dog-training-cedar-park-tx/*          /dog-training-cedar-park.html      301!
+/dog-training-leander-tx/*             /dog-training-cedar-park.html      301!
 /dog-training-west-lake-hills-tx/*     /dog-training-westlake.html        301!
 /dog-training-westlake-tx/*            /dog-training-westlake.html        301!
+/dog-training-bee-cave-tx/*            /dog-training-westlake.html        301!
+/dog-training-lakeway-tx/*             /dog-training-westlake.html        301!
+/dog-training-dripping-springs-tx/*    /dog-training-westlake.html        301!
 /dog-training-south-austin-tx/*        /dog-training-south-austin.html    301!
 /dog-training-sunset-valley-tx/*       /dog-training-south-austin.html    301!
-/dog-training-san-marcos-tx/*          /dog-training-south-austin.html    301!
+/dog-training-buda-tx/*                /dog-training-south-austin.html    301!
+/dog-training-hays-tx/*                /dog-training-south-austin.html    301!
 /dog-training-kyle-tx/*                /dog-training-south-austin.html    301!
-/dog-training-pflugerville-tx/*        /dog-training-round-rock.html      301!
-/dog-training-dripping-springs-tx/*    /dog-training-westlake.html        301!
+/dog-training-san-marcos-tx/*          /dog-training-south-austin.html    301!
 
 # Catch-all for every OTHER legacy /dog-training-[city]-tx/ page -> home.
+# (Elgin, Manor, Lockhart, Luling, Martindale, Wimberly, Lago Vista, etc. until they get real pages.)
 # NON-forced (no "!") so the real new /dog-training-*.html pages still serve.
 /dog-training-*                        /                                 301
 
