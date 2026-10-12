@@ -1,10 +1,21 @@
 /* ATX K9 inquiry form.
    Sends the form to /api/lead (a Netlify function that talks to GoHighLevel
-   server-side), then reveals the GHL booking calendar. No API keys in the browser. */
+   server-side), then reveals the GHL booking calendar. No API keys in the browser.
+   Bot protection: a hidden honeypot field plus a fill timer, both checked
+   server-side in netlify/functions/lead.mjs. */
 (function(){
   var CALENDAR_URL = 'https://api.leadconnectorhq.com/widget/bookings/atx-k9-consult';
   var form = document.getElementById('intakeForm');
   if (!form) return;
+
+  var startedAt = Date.now();
+
+  // Honeypot: invisible to people and screen readers, tempting to bots.
+  var hp = document.createElement('div');
+  hp.setAttribute('aria-hidden', 'true');
+  hp.style.cssText = 'position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important;';
+  hp.innerHTML = '<label>Company website<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label>';
+  form.appendChild(hp);
 
   function val(name){ var el = form.elements[name]; return el && el.value ? el.value.trim() : ''; }
   function checked(name){ var el = form.elements[name]; return !!(el && el.checked); }
@@ -20,7 +31,9 @@
         program: val('program'), message: val('message'), referral: val('referral'),
         dates: val('dates'),
         sms_transactional: checked('sms_transactional'),
-        sms_marketing: checked('sms_marketing')
+        sms_marketing: checked('sms_marketing'),
+        company_website: val('company_website'),
+        _elapsed: Date.now() - startedAt
       })
     }).then(function(res){
       if (!res.ok) { return res.text().then(function(t){ throw new Error('Lead ' + res.status + ': ' + t); }); }

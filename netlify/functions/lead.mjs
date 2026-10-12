@@ -2,11 +2,21 @@
 // Creates or updates the website inquiry contact in GoHighLevel.
 // The GHL Private Integration token lives in the GHL_PIT environment variable
 // (Netlify > atx-k9 > Environment variables). It is never sent to the browser.
+//
+// Bot protection (added 10/12/26 after random-string spam began 10/10/26):
+//   1. Honeypot: ghl-form.js adds a hidden "company_website" field. Humans never fill it.
+//   2. Time trap: ghl-form.js sends "_elapsed" (ms the form was open). Missing, under
+//      3 seconds, or over 24 hours means it did not come from a real visit.
+//   3. Gibberish check: random-letter names like "SlbXHEDPSkHJDVKLZpV".
+// Rejected submissions get a normal-looking 200 so bots learn nothing, but are never
+// sent to GHL. Each rejection is logged with its reason (Netlify function logs).
 
 const LOCATION_ID = 'LeevxXmazNHLFNJP9j3C';
 const API = 'https://services.leadconnectorhq.com';
 const VERSION = '2021-07-28';
 const ALLOWED_ORIGINS = ['https://atxk9.com', 'https://www.atxk9.com'];
+const MIN_FILL_MS = 3000;
+const MAX_FILL_MS = 24 * 60 * 60 * 1000;
 
 let fieldMapCache = null;
 
@@ -35,6 +45,26 @@ function toE164(raw) {
 function splitName(n) {
   const i = n.indexOf(' ');
   return i === -1 ? { f: n, l: '' } : { f: n.slice(0, i), l: n.slice(i + 1) };
+}
+
+// A word is gibberish if it is long and has 3+ capital letters after the first letter.
+// Real names ("McDonald", "DeAngelo", "Duke Nier Valentino") never hit this.
+function looksRandom(text) {
+  return (text || '').split(/\s+/).some((w) => {
+    if (!/^[A-Za-z]{10,}$/.test(w)) return false;
+    const innerCaps = (w.slice(1).match(/[A-Z]/g) || []).length;
+    return innerCaps >= 3;
+  });
+}
+
+function botReason(b, name) {
+  if (clean(b.company_website, 200)) return 'honeypot';
+  const elapsed = Number(b._elapsed);
+  if (!Number.isFinite(elapsed)) return 'no-timer';
+  if (elapsed < MIN_FILL_MS) return 'too-fast';
+  if (elapsed > MAX_FILL_MS) return 'stale';
+  if (looksRandom(name) || looksRandom(clean(b.dog, 200))) return 'gibberish';
+  return '';
 }
 
 async function getFieldMap(token) {
@@ -71,6 +101,12 @@ export default async (req) => {
   const email = clean(b.email, 200);
   const phone = toE164(clean(b.phone, 40));
   if (!name || (!email && !phone)) return json(400, { error: 'Name and email or phone are required' });
+
+  const reason = botReason(b, name);
+  if (reason) {
+    console.warn('Lead blocked:', reason, '| origin:', origin || 'none');
+    return json(200, { ok: true });
+  }
 
   let map = {};
   try {
