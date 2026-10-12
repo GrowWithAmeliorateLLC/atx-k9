@@ -2,6 +2,9 @@
 # This file applies to the dedicated atxk9.com Netlify site
 # (repo GrowWithAmeliorateLLC/atx-k9, published from the repo root). Targets are root-relative.
 
+# Homepage duplicate: /index.html -> / (one canonical homepage address)
+/index.html                            /                                 301!
+
 # Core pages
 /board-and-train-austin/*              /board-and-train.html             301!
 /dog-obedience-training-austin-tx/*    /private.html                     301!

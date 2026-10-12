@@ -1,0 +1,42 @@
+# Canonical URL for every page, sent as an HTTP Link header (Google treats this
+# the same as a <link rel="canonical"> tag). Added 10/12/26 after Search Console
+# flagged /index.html as a duplicate of the homepage.
+
+/
+  Link: <https://atxk9.com/>; rel="canonical"
+
+/about.html
+  Link: <https://atxk9.com/about.html>; rel="canonical"
+
+/board-and-train.html
+  Link: <https://atxk9.com/board-and-train.html>; rel="canonical"
+
+/boarding.html
+  Link: <https://atxk9.com/boarding.html>; rel="canonical"
+
+/contact.html
+  Link: <https://atxk9.com/contact.html>; rel="canonical"
+
+/dog-training-cedar-park.html
+  Link: <https://atxk9.com/dog-training-cedar-park.html>; rel="canonical"
+
+/dog-training-round-rock.html
+  Link: <https://atxk9.com/dog-training-round-rock.html>; rel="canonical"
+
+/dog-training-south-austin.html
+  Link: <https://atxk9.com/dog-training-south-austin.html>; rel="canonical"
+
+/dog-training-westlake.html
+  Link: <https://atxk9.com/dog-training-westlake.html>; rel="canonical"
+
+/privacy.html
+  Link: <https://atxk9.com/privacy.html>; rel="canonical"
+
+/private.html
+  Link: <https://atxk9.com/private.html>; rel="canonical"
+
+/puppy.html
+  Link: <https://atxk9.com/puppy.html>; rel="canonical"
+
+/terms.html
+  Link: <https://atxk9.com/terms.html>; rel="canonical"
