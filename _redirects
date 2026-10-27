@@ -12,29 +12,45 @@
 /about/*                               /about.html                       301!
 /faq/*                                 /private.html#faq                  301!
 /contact/*                             /contact.html                     301!
+/client-portal/*                       /contact.html                     301!
 /austin-dog-training-blog/*            /                                 301!
 
 # Location landing pages (old -tx slugs -> nearest new location page)
+# North / Williamson County
 /dog-training-round-rock-tx/*          /dog-training-round-rock.html      301!
 /dog-training-georgetown-tx/*          /dog-training-round-rock.html      301!
 /dog-training-hutto-tx/*               /dog-training-round-rock.html      301!
 /dog-training-pflugerville-tx/*        /dog-training-round-rock.html      301!
+# Northwest / Lake Travis north shore
 /dog-training-cedar-park-tx/*          /dog-training-cedar-park.html      301!
 /dog-training-leander-tx/*             /dog-training-cedar-park.html      301!
+/dog-training-lago-vista-tx/*          /dog-training-cedar-park.html      301!
+/dog-training-jonestown-tx/*           /dog-training-cedar-park.html      301!
+# West
 /dog-training-west-lake-hills-tx/*     /dog-training-westlake.html        301!
 /dog-training-westlake-tx/*            /dog-training-westlake.html        301!
+/dog-training-rollingwood-tx/*         /dog-training-westlake.html        301!
 /dog-training-bee-cave-tx/*            /dog-training-westlake.html        301!
 /dog-training-lakeway-tx/*             /dog-training-westlake.html        301!
 /dog-training-dripping-springs-tx/*    /dog-training-westlake.html        301!
+# South / Hays + Caldwell County
 /dog-training-south-austin-tx/*        /dog-training-south-austin.html    301!
 /dog-training-sunset-valley-tx/*       /dog-training-south-austin.html    301!
 /dog-training-buda-tx/*                /dog-training-south-austin.html    301!
 /dog-training-hays-tx/*                /dog-training-south-austin.html    301!
 /dog-training-kyle-tx/*                /dog-training-south-austin.html    301!
 /dog-training-san-marcos-tx/*          /dog-training-south-austin.html    301!
+/dog-training-mountain-city-tx/*       /dog-training-south-austin.html    301!
+/dog-training-creedmoor-tx/*           /dog-training-south-austin.html    301!
+/dog-training-mustang-ridge-tx/*       /dog-training-south-austin.html    301!
+/dog-training-wimberly-tx/*            /dog-training-south-austin.html    301!
+/dog-training-woodcreek-tx/*           /dog-training-south-austin.html    301!
+/dog-training-lockhart-tx/*            /dog-training-south-austin.html    301!
+/dog-training-luling-tx/*              /dog-training-south-austin.html    301!
+/dog-training-martindale-tx/*          /dog-training-south-austin.html    301!
 
 # Catch-all for every OTHER legacy /dog-training-[city]-tx/ page -> home.
-# (Elgin, Manor, Lockhart, Luling, Martindale, Wimberly, Lago Vista, etc. until they get real pages.)
+# (Elgin, Manor, Smithville, etc. — east side, home base. Repoint to the Elgin page once it exists.)
 # NON-forced (no "!") so the real new /dog-training-*.html pages still serve.
 /dog-training-*                        /                                 301
 
