@@ -40,3 +40,12 @@
 
 /terms.html
   Link: <https://atxk9.com/terms.html>; rel="canonical"
+
+/guides/
+  Link: <https://atxk9.com/guides/>; rel="canonical"
+
+/guides/board-and-train-cost/
+  Link: <https://atxk9.com/guides/board-and-train-cost/>; rel="canonical"
+
+/guides/puppy-potty-training-timeline/
+  Link: <https://atxk9.com/guides/puppy-potty-training-timeline/>; rel="canonical"
