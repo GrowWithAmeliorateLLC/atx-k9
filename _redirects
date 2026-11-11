@@ -6,14 +6,13 @@
 /index.html                            /                                 301!
 
 # Core pages
+# 11/11/26: /reviews/ and /faq/ restored as real pages at their old addresses (no redirect).
 /board-and-train-austin/*              /board-and-train.html             301!
 /dog-obedience-training-austin-tx/*    /private.html                     301!
-/reviews/*                             /#reviews                         301!
 /about/*                               /about.html                       301!
-/faq/*                                 /private.html#faq                  301!
 /contact/*                             /contact.html                     301!
 /client-portal/*                       /contact.html                     301!
-/austin-dog-training-blog/*            /                                 301!
+/austin-dog-training-blog/*            /guides/                                 301!
 
 # Location landing pages (old -tx slugs -> nearest new location page)
 # East / home base (Elgin)
@@ -40,18 +39,15 @@
 /dog-training-lakeway-tx/*             /dog-training-lakeway.html         301!
 /dog-training-dripping-springs-tx/*    /dog-training-dripping-springs.html 301!
 # South / Hays + Caldwell County
+# 11/11/26: Kyle, San Marcos, Lockhart, Buda restored as real pages at their old addresses (no redirect).
 /dog-training-south-austin-tx/*        /dog-training-south-austin.html    301!
 /dog-training-sunset-valley-tx/*       /dog-training-south-austin.html    301!
-/dog-training-buda-tx/*                /dog-training-south-austin.html    301!
 /dog-training-hays-tx/*                /dog-training-south-austin.html    301!
-/dog-training-kyle-tx/*                /dog-training-south-austin.html    301!
-/dog-training-san-marcos-tx/*          /dog-training-south-austin.html    301!
 /dog-training-mountain-city-tx/*       /dog-training-south-austin.html    301!
 /dog-training-creedmoor-tx/*           /dog-training-south-austin.html    301!
 /dog-training-mustang-ridge-tx/*       /dog-training-south-austin.html    301!
 /dog-training-wimberly-tx/*            /dog-training-dripping-springs.html 301!
 /dog-training-woodcreek-tx/*           /dog-training-dripping-springs.html 301!
-/dog-training-lockhart-tx/*            /dog-training-south-austin.html    301!
 /dog-training-luling-tx/*              /dog-training-south-austin.html    301!
 /dog-training-martindale-tx/*          /dog-training-south-austin.html    301!
 
@@ -61,15 +57,17 @@
 /dog-training-*                        /                                 301
 
 # Blog posts
-/dog-owner-enters-the-world-of-training/*              /                 301!
-/pros-and-cons-of-potty-pods-and-other-tips/*          /puppy.html       301!
+/dog-owner-enters-the-world-of-training/*              /guides/                 301!
+/pros-and-cons-of-potty-pods-and-other-tips/*          /guides/puppy-potty-training-timeline/       301!
 /nervous-puppy/*                       /puppy.html                       301!
-/lessons-that-my-dogs-have-taught-me-about-training/*  /                 301!
+/lessons-that-my-dogs-have-taught-me-about-training/*  /guides/                 301!
 /crate-training-dont-fence-me-in-austindogtraining/*   /puppy.html       301!
 /training-and-exercise-for-your-dog/*  /board-and-train.html             301!
-/category/*                            /                                 301!
-/author/*                              /                                 301!
+/category/*                            /guides/                                 301!
+/author/*                              /guides/                                 301!
 
 # www -> apex (Netlify also handles this once the primary domain is set)
+# http://www in one hop (was http://www -> https://www -> apex, 2 hops). Added 11/11/26.
+http://www.atxk9.com/*                 https://atxk9.com/:splat          301!
 https://www.atxk9.com/*                https://atxk9.com/:splat          301!
 https://atx-k9.netlify.app/*  https://atxk9.com/:splat  301!
