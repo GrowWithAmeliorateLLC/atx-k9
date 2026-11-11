@@ -67,7 +67,7 @@
 /author/*                              /guides/                                 301!
 
 # www -> apex (Netlify also handles this once the primary domain is set)
-# http://www in one hop (was http://www -> https://www -> apex, 2 hops). Added 11/11/26.
-http://www.atxk9.com/*                 https://atxk9.com/:splat          301!
+# NOTE 11/11/26: http://www takes 2 hops (Netlify upgrades to HTTPS at the edge before _redirects runs).
+# An http://www rule here has no effect, so none is kept. Google follows the 2 hops fine.
 https://www.atxk9.com/*                https://atxk9.com/:splat          301!
 https://atx-k9.netlify.app/*  https://atxk9.com/:splat  301!
