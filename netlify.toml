@@ -3,7 +3,7 @@
 [build]
   publish = "."
 
-# Keep Netlify "Pretty URLs" off so links like private.html resolve exactly
-# as they did when this site was served from the found-reports repo.
+# Pretty URLs processing stays off. Since 11/19/26 every page lives at a clean
+# folder URL (/private/ = private/index.html); old .html URLs 301 via _redirects.
 [build.processing.html]
   pretty_urls = false
