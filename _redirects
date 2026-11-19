@@ -5,64 +5,84 @@
 # Homepage duplicate: /index.html -> / (one canonical homepage address)
 /index.html                            /                                 301!
 
+# 11/19/26: clean URL migration. Every old flat .html page -> its /slug/ folder page (one hop).
+# Kept ABOVE the /dog-training-* catch-all so the old town .html URLs don't fall through to /.
+/about.html                            /about/                           301!
+/board-and-train.html                  /board-and-train/                 301!
+/boarding.html                         /boarding/                        301!
+/contact.html                          /contact/                         301!
+/privacy.html                          /privacy/                         301!
+/private.html                          /private/                         301!
+/puppy.html                            /puppy/                           301!
+/terms.html                            /terms/                           301!
+/dog-training-elgin.html               /dog-training-elgin/              301!
+/dog-training-round-rock.html          /dog-training-round-rock/         301!
+/dog-training-georgetown.html          /dog-training-georgetown/         301!
+/dog-training-pflugerville.html        /dog-training-pflugerville/       301!
+/dog-training-cedar-park.html          /dog-training-cedar-park/         301!
+/dog-training-leander.html             /dog-training-leander/            301!
+/dog-training-westlake.html            /dog-training-westlake/           301!
+/dog-training-lakeway.html             /dog-training-lakeway/            301!
+/dog-training-dripping-springs.html    /dog-training-dripping-springs/   301!
+/dog-training-south-austin.html        /dog-training-south-austin/       301!
+
 # Core pages
+# 11/19/26: /about/ and /contact/ are now real pages, so their old WordPress rules were removed.
 # 11/11/26: /reviews/ and /faq/ restored as real pages at their old addresses (no redirect).
-/board-and-train-austin/*              /board-and-train.html             301!
-/dog-obedience-training-austin-tx/*    /private.html                     301!
-/about/*                               /about.html                       301!
-/contact/*                             /contact.html                     301!
-/client-portal/*                       /contact.html                     301!
+/board-and-train-austin/*              /board-and-train/             301!
+/dog-obedience-training-austin-tx/*    /private/                     301!
+/client-portal/*                       /contact/                     301!
 /austin-dog-training-blog/*            /guides/                                 301!
 
 # Location landing pages (old -tx slugs -> nearest new location page)
 # East / home base (Elgin)
-/dog-training-elgin-tx/*               /dog-training-elgin.html           301!
-/dog-training-manor-tx/*               /dog-training-elgin.html           301!
-/dog-training-smithville-tx/*          /dog-training-elgin.html           301!
-/dog-training-bastrop-tx/*             /dog-training-elgin.html           301!
-/dog-training-taylor-tx/*              /dog-training-elgin.html           301!
+/dog-training-elgin-tx/*               /dog-training-elgin/           301!
+/dog-training-manor-tx/*               /dog-training-elgin/           301!
+/dog-training-smithville-tx/*          /dog-training-elgin/           301!
+/dog-training-bastrop-tx/*             /dog-training-elgin/           301!
+/dog-training-taylor-tx/*              /dog-training-elgin/           301!
 # North / Williamson County
-/dog-training-round-rock-tx/*          /dog-training-round-rock.html      301!
-/dog-training-georgetown-tx/*          /dog-training-georgetown.html      301!
-/dog-training-hutto-tx/*               /dog-training-round-rock.html      301!
-/dog-training-pflugerville-tx/*        /dog-training-pflugerville.html    301!
+/dog-training-round-rock-tx/*          /dog-training-round-rock/      301!
+/dog-training-georgetown-tx/*          /dog-training-georgetown/      301!
+/dog-training-hutto-tx/*               /dog-training-round-rock/      301!
+/dog-training-pflugerville-tx/*        /dog-training-pflugerville/    301!
 # Northwest / Lake Travis north shore
-/dog-training-cedar-park-tx/*          /dog-training-cedar-park.html      301!
-/dog-training-leander-tx/*             /dog-training-leander.html         301!
-/dog-training-lago-vista-tx/*          /dog-training-leander.html         301!
-/dog-training-jonestown-tx/*           /dog-training-leander.html         301!
+/dog-training-cedar-park-tx/*          /dog-training-cedar-park/      301!
+/dog-training-leander-tx/*             /dog-training-leander/         301!
+/dog-training-lago-vista-tx/*          /dog-training-leander/         301!
+/dog-training-jonestown-tx/*           /dog-training-leander/         301!
 # West
-/dog-training-west-lake-hills-tx/*     /dog-training-westlake.html        301!
-/dog-training-westlake-tx/*            /dog-training-westlake.html        301!
-/dog-training-rollingwood-tx/*         /dog-training-westlake.html        301!
-/dog-training-bee-cave-tx/*            /dog-training-westlake.html        301!
-/dog-training-lakeway-tx/*             /dog-training-lakeway.html         301!
-/dog-training-dripping-springs-tx/*    /dog-training-dripping-springs.html 301!
+/dog-training-west-lake-hills-tx/*     /dog-training-westlake/        301!
+/dog-training-westlake-tx/*            /dog-training-westlake/        301!
+/dog-training-rollingwood-tx/*         /dog-training-westlake/        301!
+/dog-training-bee-cave-tx/*            /dog-training-westlake/        301!
+/dog-training-lakeway-tx/*             /dog-training-lakeway/         301!
+/dog-training-dripping-springs-tx/*    /dog-training-dripping-springs/ 301!
 # South / Hays + Caldwell County
 # 11/11/26: Kyle, San Marcos, Lockhart, Buda restored as real pages at their old addresses (no redirect).
-/dog-training-south-austin-tx/*        /dog-training-south-austin.html    301!
-/dog-training-sunset-valley-tx/*       /dog-training-south-austin.html    301!
-/dog-training-hays-tx/*                /dog-training-south-austin.html    301!
-/dog-training-mountain-city-tx/*       /dog-training-south-austin.html    301!
-/dog-training-creedmoor-tx/*           /dog-training-south-austin.html    301!
-/dog-training-mustang-ridge-tx/*       /dog-training-south-austin.html    301!
-/dog-training-wimberly-tx/*            /dog-training-dripping-springs.html 301!
-/dog-training-woodcreek-tx/*           /dog-training-dripping-springs.html 301!
-/dog-training-luling-tx/*              /dog-training-south-austin.html    301!
-/dog-training-martindale-tx/*          /dog-training-south-austin.html    301!
+/dog-training-south-austin-tx/*        /dog-training-south-austin/    301!
+/dog-training-sunset-valley-tx/*       /dog-training-south-austin/    301!
+/dog-training-hays-tx/*                /dog-training-south-austin/    301!
+/dog-training-mountain-city-tx/*       /dog-training-south-austin/    301!
+/dog-training-creedmoor-tx/*           /dog-training-south-austin/    301!
+/dog-training-mustang-ridge-tx/*       /dog-training-south-austin/    301!
+/dog-training-wimberly-tx/*            /dog-training-dripping-springs/ 301!
+/dog-training-woodcreek-tx/*           /dog-training-dripping-springs/ 301!
+/dog-training-luling-tx/*              /dog-training-south-austin/    301!
+/dog-training-martindale-tx/*          /dog-training-south-austin/    301!
 
 # Catch-all for every OTHER legacy /dog-training-[city]-tx/ page -> home.
 # (Any remaining legacy city slug without a nearer page.)
-# NON-forced (no "!") so the real new /dog-training-*.html pages still serve.
+# NON-forced (no "!") so the real /dog-training-*/ folder pages still serve.
 /dog-training-*                        /                                 301
 
 # Blog posts
 /dog-owner-enters-the-world-of-training/*              /guides/                 301!
 /pros-and-cons-of-potty-pods-and-other-tips/*          /guides/puppy-potty-training-timeline/       301!
-/nervous-puppy/*                       /puppy.html                       301!
+/nervous-puppy/*                       /puppy/                       301!
 /lessons-that-my-dogs-have-taught-me-about-training/*  /guides/                 301!
-/crate-training-dont-fence-me-in-austindogtraining/*   /puppy.html       301!
-/training-and-exercise-for-your-dog/*  /board-and-train.html             301!
+/crate-training-dont-fence-me-in-austindogtraining/*   /puppy/       301!
+/training-and-exercise-for-your-dog/*  /board-and-train/             301!
 /category/*                            /guides/                                 301!
 /author/*                              /guides/                                 301!
 
